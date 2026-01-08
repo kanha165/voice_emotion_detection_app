@@ -226,22 +226,28 @@ if mode == "Text Input":
 # VOICE MODE
 # ---------------------------
 else:
-    st.markdown('<div class="info-card speak-hint">Speak clearly after clicking below</div>', unsafe_allow_html=True)
+    st.markdown('<div class="info-card speak-hint">Speak and record your voice below</div>', unsafe_allow_html=True)
 
-    if st.button("Start Voice Detection"):
-        with st.spinner("Listening..."):
+    audio_data = st.audio_input("🎙 Record your voice")
+
+    if audio_data is not None:
+        with st.spinner("Processing audio..."):
+            # Save recorded audio
+            with open("input.wav", "wb") as f:
+                f.write(audio_data.getbuffer())
+
             try:
-                with sr.Microphone() as source:
-                    recognizer.adjust_for_ambient_noise(source, duration=0.8)
-                    audio = recognizer.listen(source, phrase_time_limit=6)
+                recognizer = sr.Recognizer()
+                with sr.AudioFile("input.wav") as source:
+                    audio = recognizer.record(source)
 
                 final_spoken = recognizer.recognize_google(audio)
                 final_trans = translator.translate(final_spoken)
                 cleaned = clean_text(final_trans)
                 emotion = model.predict(vectorizer.transform([cleaned]))[0]
 
-            except:
-                st.error(" Could not process audio")
+            except Exception as e:
+                st.error(" Could not recognize speech")
 
 
 # ---------------------------
