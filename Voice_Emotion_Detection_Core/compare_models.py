@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TRAIN_PATH = os.path.join(BASE_DIR, "dataset", "processed", "train_processed.csv")
 VAL_PATH   = os.path.join(BASE_DIR, "dataset", "processed", "val_processed.csv")
 
-print("📂 Loading processed dataset...")
+print(" Loading processed dataset...")
 
 train_df = pd.read_csv(TRAIN_PATH)
 val_df   = pd.read_csv(VAL_PATH)
@@ -61,10 +61,10 @@ models = {
 # =========================
 results = []
 
-print("\n📊 MODEL COMPARISON RESULTS\n")
+print("\n MODEL COMPARISON RESULTS\n")
 
 for name, model in models.items():
-    print(f"🔹 Training {name}...")
+    print(f" Training {name}...")
 
     model.fit(X_train_vec, y_train)
     preds = model.predict(X_val_vec)
@@ -85,5 +85,5 @@ results_df = pd.DataFrame(
     columns=["Model", "Accuracy", "F1-score"]
 ).sort_values(by="Accuracy", ascending=False)
 
-print("🏆 FINAL RANKING (Best → Worst)\n")
+print("FINAL RANKING (Best → Worst)\n")
 print(results_df.to_string(index=False))
