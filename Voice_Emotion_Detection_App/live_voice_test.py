@@ -28,7 +28,7 @@ from utils.text_preprocessing import clean_text
 recognizer = sr.Recognizer()
 translator = GoogleTranslator(source="auto", target="en")
 
-print("🎤 Speak now (Hindi or English)...")
+print(" Speak now (Hindi or English)...")
 
 with sr.Microphone() as source:
     recognizer.adjust_for_ambient_noise(source, duration=2)
