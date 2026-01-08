@@ -18,17 +18,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-
-
-
-
-
-
-
-	
-
-
-
 # ---------------------------
 # PREMIUM CSS
 # ---------------------------
@@ -153,18 +142,6 @@ textarea {
 
 </style>
 """, unsafe_allow_html=True)
-
-
-
-
-
-
-
-
-
-
-
-
 
 # ---------------------------
 # LOAD MODEL
