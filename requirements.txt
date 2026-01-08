@@ -1,8 +1,8 @@
-numpy
-pandas
-scikit-learn
-speechrecognition
-deep-translator
 streamlit
 librosa
+numpy
+pandas
 soundfile
+SpeechRecognition
+deep-translator
+scikit-learn
