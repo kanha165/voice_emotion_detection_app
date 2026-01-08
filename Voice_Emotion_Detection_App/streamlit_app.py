@@ -21,6 +21,14 @@ st.set_page_config(
 
 
 
+
+
+
+
+	
+
+
+
 # ---------------------------
 # PREMIUM CSS
 # ---------------------------
@@ -33,7 +41,7 @@ header, footer, #MainMenu { display: none !important; }
 
 /* ---------------- APP BACKGROUND (IMAGE REMOVED) ---------------- */
 .stApp {
-    background: linear-gradient(150deg,#f1dac4, #b5b682,#ff9770, #ffd670, #fedc97,#7c9885,#f79256, #fbd1a2);  /* ✅ BG COLOR */
+    background: linear-gradient(150deg,#f1dac4, #7c9885);  /* ✅ BG COLOR */
     background-attachment: fixed;
     font-family: 'Segoe UI', Roboto, sans-serif;
 }
@@ -68,7 +76,7 @@ header, footer, #MainMenu { display: none !important; }
 
 /* ================= RADIO BUTTONS ================= */
 div[data-testid="stRadio"] > div {
-    background: linear-gradient(90deg,#ef476f , #ffd166);
+    background: linear-gradient(90deg,#eaeaea);
     padding: 10px 18px;
     border-radius: 30px;
     border: 2px solid #f77f00;
@@ -87,7 +95,7 @@ div[data-testid="stRadio"] label {
 
 /* ================= TEXT AREA ================= */
 textarea {
-    background: linear-gradient(100deg,  #fcbf49, #eae2b7,#0077b6  ) !important;
+    background: linear-gradient(100deg,  #e8dab2) !important;
     color: #003049 !important;
     border-radius: 16px !important;
     border: 2px solid #ffc857 !important;
@@ -107,22 +115,22 @@ textarea {
 }
 
 .speak-hint {
-    background: linear-gradient(90deg, #a69cac, #474973);
+    background: linear-gradient(90deg, #a69cac);
 }
 
 .you-said {
-    background: linear-gradient(90deg, #caf0f8, #fedc97);
+    background: linear-gradient(90deg, #caf0f8);
 }
 
 .translated {
-    background: linear-gradient(90deg, #b5b682, #28666e);
+    background: linear-gradient(90deg, #b5b682);
 }
 
 /* ---------------- BUTTON ---------------- */
 .stButton > button {
     width: 100%;
-    background: linear-gradient(90deg,  #8ac926, #1982c4);
-    color: #d9d9d9;
+    background: linear-gradient(90deg, #1982c4);
+    color: #000000;
     border-radius: 15px;
     padding: 12px;
     font-weight: 700;
@@ -139,12 +147,23 @@ textarea {
     font-weight: 800;
     border-radius: 20px;
     color:   #000000;
-    background: linear-gradient(90deg,  #ffca3a , #8ac926 , #1982c4);
+    background: linear-gradient(90deg,  #ffca3a );
     box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
 </style>
 """, unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
 
 
 # ---------------------------
@@ -243,7 +262,7 @@ if final_trans:
 if emotion:
     st.markdown(
         f'''
-        <div class="result-box" style="background: linear-gradient(90deg, #8f2d56, #8ac926, #3066be, #218380);">
+        <div class="result-box" style="background: linear-gradient(90deg, #8f2d56);">
             Detected Emotion: {emotion.upper()}
         </div>
         ''',
