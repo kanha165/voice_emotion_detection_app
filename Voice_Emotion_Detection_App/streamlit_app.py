@@ -30,7 +30,7 @@ header, footer, #MainMenu { display: none !important; }
 
 /* ---------------- APP BACKGROUND (IMAGE REMOVED) ---------------- */
 .stApp {
-    background: linear-gradient(150deg,#f1dac4, #7c9885);  /* ✅ BG COLOR */
+    background: linear-gradient(150deg,#f1dac4, #7c9885);  /*  BG COLOR */
     background-attachment: fixed;
     font-family: 'Segoe UI', Roboto, sans-serif;
 }
@@ -163,7 +163,7 @@ def load_assets():
 model, vectorizer = load_assets()
 
 if model is None or vectorizer is None:
-    st.error("❌ Model files not found. Check model directory.")
+    st.error(" Model files not found. Check model directory.")
     st.stop()
 
 recognizer = sr.Recognizer()
